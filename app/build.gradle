@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        doc_tin {
+            keyAlias 'key0'
+            keyPassword 'daothe'
+            storeFile file('D:/Android/App/blurNavigation/DEmoBlurApp/app/key1.jks')
+            storePassword 'thedao'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId 'th.demoblurapp'
+        minSdkVersion 14
+        targetSdkVersion 19
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+        signingConfig signingConfigs.doc_tin
+        versionName '1.2'
+        versionCode 3
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            renderscriptDebuggable true
+            signingConfig signingConfigs.doc_tin
+        }
+    }
+    productFlavors {
+    }
+}
+
+
+
+
+dependencies {
+    compile project(':library')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.ms-square:etsyblur:0.2.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.BlackBoxVision:material-wheel-view:v0.0.1'
+    // drawer material
+    compile 'com.mikepenz:google-material-typeface:2.2.0.1@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.6.0.3@aar'
+    compile('com.mikepenz:materialdrawer:5.9.1@aar') {
+        transitive = true
+    }
+    testCompile 'junit:junit:4.12'
+    compile files('libs/commons-lang3-3.5.jar')
+
+    compile 'com.google.android.gms:play-services-ads:10.2.4'
+}

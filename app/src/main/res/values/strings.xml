@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Tin tuc trong ngay</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="danh_muc">Danh mục</string>
+
+    <string name="hot_new">Tin tức</string>
+    <string name="bong_da">Bóng đá</string>
+    <string name="annninh_hinhsu">An ninh-Hình sự</string>
+    <string name="thoi_trang">Thời trang</string>
+    <string name="tai_chinh">Tài chính</string>
+    <string name="xa_hoi">Xã hội</string>
+    <string name="am_thuc">Ẩm thực</string>
+    <string name="lam_dep">Làm đẹp</string>
+    <string name="phim">Phim</string>
+    <string name="giao_duc">Giáo dục</string>
+    <string name="ban_tre">Bạn trẻ</string>
+    <string name="ca_nhac">Ca nhạc</string>
+
+    <string name="test_admob_app_id">ca-app-pub-1510017343836393~5202557869</string>
+    <string name="test_admob_express_unit_id">ca-app-pub-1510017343836393/2466767868</string>
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

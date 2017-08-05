@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/hot_new"
+            android:actionLayout="@layout/slidebar_navigation_menu_item"
+            android:checkable="false"
+            android:title="Tin tức"></item>
+        <item
+            android:id="@+id/bong_da"
+            android:title="Bóng đá"></item>
+        <item
+            android:id="@+id/annninh_hinhsu"
+            android:title="An ninh-Hình sự"></item>
+        <item
+            android:id="@+id/thoi_trang"
+            android:title="Thời trang"></item>
+        <item
+            android:id="@+id/tai_chinh"
+            android:title="Tài chính"></item>
+        <item
+            android:id="@+id/xa_hoi"
+            android:title="Xã hội"></item>
+        <item
+            android:id="@+id/am_thuc"
+            android:title="Ẩm thực"></item>
+        <item
+            android:id="@+id/lam_dep"
+            android:title="Làm đẹp"></item>
+        <item
+            android:id="@+id/phim"
+            android:title="Phim"></item>
+        <item
+            android:id="@+id/giao_duc"
+            android:title="Giáo dục"></item>
+        <item
+            android:id="@+id/ban_tre"
+            android:title="Bạn trẻ"></item>
+        <item
+            android:id="@+id/ca_nhac"
+            android:title="Ca nhạc"></item>
+    </group>
+</menu>
