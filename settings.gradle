@@ -1,1 +1,1 @@
-include ':app', ':library', ':tintuc'
+include ':app', ':library', ':graphic', ':libtintuc'

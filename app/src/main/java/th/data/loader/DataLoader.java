@@ -12,7 +12,7 @@ import th.data.download.IErrorListener;
 import th.data.dynamic.Source;
 import th.data.dynamic.source._24h.group.category.Category;
 import th.data.statik.Item;
-import th.tintuchangngay.listener.IBeforeLoadItem;
+import th.data.listener.IBeforeLoadItem;
 
 /**
  * Created by The on 5/6/2017.

@@ -9,7 +9,7 @@ import android.net.ConnectivityManager;
 import th.data.dynamic.Source;
 import th.data.dynamic.source._24h.group.category.Category;
 import th.tintuchangngay.DailyNewsActivity;
-import th.tintuchangngay.listener.ActiveNetWorkListener;
+import th.data.listener.ActiveNetWorkListener;
 
 /**
  * Created by The on 5/1/2017.
