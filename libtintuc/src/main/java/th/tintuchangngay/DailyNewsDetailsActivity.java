@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
+import th.libtintuc.R;
 public class DailyNewsDetailsActivity extends Activity {
 
 

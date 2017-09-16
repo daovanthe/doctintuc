@@ -9,21 +9,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
 
 import com.google.android.gms.ads.MobileAds;
 import com.ms_square.etsyblur.BlurSupport;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import th.data.ContentAdapter;
 import th.data.dynamic.Source;
 import th.data.dynamic.source._24h.group.category.Category;
-import th.data.statik.Item;
 import th.view.FeedView;
-import th.view.adapter.ItemAdapter;
 
 public class DailyNewsActivity extends Activity {
 
@@ -77,7 +70,6 @@ public class DailyNewsActivity extends Activity {
                 public boolean onMenuItemClick(MenuItem item) {
                     Log.d("the.dv", "DailyNewActivity.MenuItemClicked");
                     if (getResources().getString(R.string.hot_new).equals(item.getTitle())) {
-                        contentAdapter.select(Source._24H, Category.TIN_NONG);
                         mFeedView.loadContent(Source._24H, Category.TIN_NONG);
                     } else if (getResources().getString(R.string.bong_da).equals(item.getTitle())) {
                         mFeedView.loadContent(Source._24H, Category.BONG_DA);

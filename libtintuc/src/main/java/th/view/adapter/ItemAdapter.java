@@ -25,8 +25,9 @@ import java.util.List;
 
 import th.data.download.ImageDownload;
 import th.data.statik.Item;
+import th.libtintuc.R;
 import th.tintuchangngay.DailyNewsDetailsActivity;
-import th.tintuchangngay.R;
+
 
 /**
  * Created by The on 5/1/2017.

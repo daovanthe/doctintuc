@@ -8,7 +8,6 @@ import android.net.ConnectivityManager;
 
 import th.data.dynamic.Source;
 import th.data.dynamic.source._24h.group.category.Category;
-import th.tintuchangngay.DailyNewsActivity;
 import th.data.listener.ActiveNetWorkListener;
 
 /**
@@ -74,11 +73,7 @@ public class DataNewDownloader {
 
     }
 
-    public void unRegisterBroadCast(DailyNewsActivity dailyNewsActivity) {
-        if (networkActive != null) {
-            dailyNewsActivity.unregisterReceiver(networkActive);
-        }
-    }
+
 
 
     class NetWorkActiveBroadCastReceiver extends BroadcastReceiver {
