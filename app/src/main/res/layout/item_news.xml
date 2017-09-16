@@ -40,7 +40,7 @@
                     android:fontFamily="regular"
                     android:text="Hình ảnh kẹt cứng trên nhiều ngả  đường dẫn đến các bến xe tại Hà Nội"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <FrameLayout
@@ -138,8 +138,8 @@
 
                                 <ImageView
                                     android:id="@+id/desciption_img"
-                                    android:layout_width="145dp"
-                                    android:layout_height="100dp"
+                                    android:layout_width="134dp"
+                                    android:layout_height="77dp"
                                     android:layout_gravity="right"
                                     android:elevation="5dp" />
                             </LinearLayout>

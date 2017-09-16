@@ -20,7 +20,7 @@ import th.tintuchangngay.listener.IBeforeLoadItem;
  * Created by The on 5/13/2017.
  */
 
-public class ContentManager extends AsyncTask<List<Item>, Item, List<Item>> {
+public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
 
 
     private Context mContext;
@@ -28,7 +28,7 @@ public class ContentManager extends AsyncTask<List<Item>, Item, List<Item>> {
     private DataLoader newLoaded;
 
 
-    public ContentManager(Context context) {
+    public ContentAdapter(Context context) {
         this.mContext = context;
     }
 
@@ -40,7 +40,7 @@ public class ContentManager extends AsyncTask<List<Item>, Item, List<Item>> {
 
     @Override
     protected List<Item> doInBackground(List<Item>... params) {
-        Log.d("the.dv", "ContentManager.diInBackground()..");
+        Log.d("the.dv", "ContentAdapter.diInBackground()..");
 
         final List<Item> mListOfNews = params[0];
         mListOfNews.clear();
@@ -88,14 +88,14 @@ public class ContentManager extends AsyncTask<List<Item>, Item, List<Item>> {
         newLoaded.setOnErr(new IErrorListener() {
             @Override
             public void onError() {
-                Log.d("the.dv", "ContentManager.SetOnErr()");
+                Log.d("the.dv", "ContentAdapter.SetOnErr()");
                 newLoaded.loadNews(mSource, mCategory);
             }
         });
         newDownloader.onDownloaded(new DownloadedListener() {
             @Override
             public void get(List<Item> items) {
-                Log.d("the.dv", "ContentManager.onDownloaded()");
+                Log.d("the.dv", "ContentAdapter.onDownloaded()");
                 isFullContent = true;
                 newLoaded.loadNews(mSource, mCategory);
             }
