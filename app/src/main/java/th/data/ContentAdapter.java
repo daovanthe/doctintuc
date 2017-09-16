@@ -14,13 +14,14 @@ import th.data.dynamic.Source;
 import th.data.dynamic.source._24h.group.category.Category;
 import th.data.loader.DataLoader;
 import th.data.statik.Item;
-import th.tintuchangngay.listener.IBeforeLoadItem;
+import th.data.listener.IBeforeLoadItem;
 
 /**
  * Created by The on 5/13/2017.
  */
 
 public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
+
 
 
     private Context mContext;
@@ -72,7 +73,6 @@ public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
         newLoaded.setOnBeforeLoad(new IBeforeLoadItem() {
             @Override
             public void beforeLoad() {
-
                 mListOfNews.clear();
                 isFullContent = false;
                 Log.d("the.dv", "BEFORE LOAD");

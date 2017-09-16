@@ -32,13 +32,10 @@ import th.tintuchangngay.R;
  * Created by The on 5/1/2017.
  */
 public class ItemAdapter extends BaseAdapter {
-
-
-    List<Item> data;
-    Context mContext;
-    LayoutInflater layoutInflater;
+    private List<Item> data;
+    private Context mContext;
+    private LayoutInflater layoutInflater;
     private final int POSITION = 10;
-
 
     public ItemAdapter(List data, Context context) {
         super();
@@ -59,11 +56,10 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-
         return position;
     }
 
-    AdviewHolder adviewHolder;
+    private AdviewHolder adviewHolder;
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -194,7 +190,6 @@ public class ItemAdapter extends BaseAdapter {
 
 
     class ViewHolder {
-
     }
 
     class TinTucViewHolder extends ViewHolder {
@@ -205,12 +200,9 @@ public class ItemAdapter extends BaseAdapter {
         public ImageView background_image;
     }
 
-
     class AdviewHolder extends ViewHolder {
         AdView adView;
     }
-
-
 }
 
 
