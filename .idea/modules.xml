@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DEmoBlurApp.iml" filepath="$PROJECT_DIR$/DEmoBlurApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doctintuc.iml" filepath="$PROJECT_DIR$/doctintuc.iml" />
       <module fileurl="file://$PROJECT_DIR$/graphic/graphic.iml" filepath="$PROJECT_DIR$/graphic/graphic.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/libtintuc/libtintuc.iml" filepath="$PROJECT_DIR$/libtintuc/libtintuc.iml" />
