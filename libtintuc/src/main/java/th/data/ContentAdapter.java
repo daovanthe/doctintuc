@@ -2,6 +2,8 @@ package th.data;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.util.Log;
 
 import java.util.List;
@@ -12,9 +14,9 @@ import th.data.download.DownloadingListener;
 import th.data.download.IErrorListener;
 import th.data.dynamic.Source;
 import th.data.dynamic.source._24h.group.category.Category;
+import th.data.listener.IBeforeLoadItem;
 import th.data.loader.DataLoader;
 import th.data.statik.Item;
-import th.data.listener.IBeforeLoadItem;
 
 /**
  * Created by The on 5/13/2017.
@@ -23,21 +25,29 @@ import th.data.listener.IBeforeLoadItem;
 public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
 
 
-
     private Context mContext;
     private DataNewDownloader newDownloader;
     private DataLoader newLoaded;
 
-
     public ContentAdapter(Context context) {
         this.mContext = context;
+        mainHandler = new Handler(mContext.getMainLooper());
     }
 
+    //region Handler thread on UI thread
+    // Get a handler that can be used to post to the main thread
+    private Handler mainHandler ;
 
-    // if content is not empty -> not required download news
+    private Runnable myRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (mDLoaded != null) {
+                mDLoaded.onDownloaded();
+            }
+        }
+    };
+    //endregion
 
-
-    private static boolean isFullContent = false;
 
     @Override
     protected List<Item> doInBackground(List<Item>... params) {
@@ -74,7 +84,6 @@ public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
             @Override
             public void beforeLoad() {
                 mListOfNews.clear();
-                isFullContent = false;
                 Log.d("the.dv", "BEFORE LOAD");
             }
         });
@@ -82,25 +91,25 @@ public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
             @Override
             public void get(List<Item> items) {
                 Log.d("the.dv", "End LOAD : " + items.size() + "(items)");
+                mainHandler.post(myRunnable);
             }
         });
 
         newLoaded.setOnErr(new IErrorListener() {
             @Override
             public void onError() {
-                Log.d("the.dv", "ContentAdapter.SetOnErr()");
                 newLoaded.loadNews(mSource, mCategory);
             }
         });
         newDownloader.onDownloaded(new DownloadedListener() {
             @Override
             public void get(List<Item> items) {
-                Log.d("the.dv", "ContentAdapter.onDownloaded()");
-                isFullContent = true;
                 newLoaded.loadNews(mSource, mCategory);
             }
         });
         newDownloader.downloadNews();
+
+
         return mListOfNews;
     }
 
@@ -113,7 +122,6 @@ public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
         super.onPostExecute(items);
     }
 
-
     public void select(Source source, Category category) {
         this.mSource = source;
         this.mCategory = category;
@@ -123,9 +131,21 @@ public class ContentAdapter extends AsyncTask<List<Item>, Item, List<Item>> {
         mDLoading = downloadingListener;
     }
 
+    public void onLoadedContent(DLoaded downloadedListener) {
+        mDLoaded = downloadedListener;
+    }
+
+    // region interface Downloading and Downloaded
     private DLoading mDLoading;
+    private DLoaded mDLoaded;
 
     public interface DLoading {
         void onDownload();
     }
+
+    public interface DLoaded {
+        void onDownloaded();
+    }
+
+    // endregion
 }

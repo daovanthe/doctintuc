@@ -73,7 +73,6 @@ public class ItemAdapter extends BaseAdapter {
                 tintucViewHolder.title_text_view = (TextView) convertView.findViewById(R.id.title_text);
                 tintucViewHolder.content_description_view = (TextView) convertView.findViewById(R.id.content_description_tx);
                 tintucViewHolder.pubTime_text_view = (TextView) convertView.findViewById(R.id.pubTime_txt);
-//            tintucViewHolder.background_image = (ImageView) convertView.findViewById(R.id.background_image);
                 tintucViewHolder.desciption_img_view = (ImageView) convertView.findViewById(R.id.desciption_img);
                 viewHolder = tintucViewHolder;
                 convertView.setTag(viewHolder);
@@ -87,7 +86,6 @@ public class ItemAdapter extends BaseAdapter {
                 tintucViewHolder.title_text_view.setText(item.getTitle());
                 tintucViewHolder.content_description_view.setText(item.getDescription().getContent());
                 tintucViewHolder.pubTime_text_view.setText(item.getPublicDate());
-//        desciption_img_view.setImageURI(Uri.parse(item.getDescription().getImage()));
 //
                 tintucViewHolder.content_description_view.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -110,12 +108,6 @@ public class ItemAdapter extends BaseAdapter {
                     }
                 });
 
-//        desciption_img_view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                System.out.println("CLICK");
-//            }
-//        });
 
                 if (item.getImage() == null) {
                     try {
@@ -135,8 +127,6 @@ public class ItemAdapter extends BaseAdapter {
                             @Override
                             public void end(final Bitmap bm) throws IOException {
                                 tintucViewHolder.desciption_img_view.setImageBitmap(bm);
-//                        tintucViewHolder.background_image.setImageBitmap(bm);/**/
-
                                 ((Activity) mContext).runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -157,15 +147,12 @@ public class ItemAdapter extends BaseAdapter {
                     }
                 } else {
                     tintucViewHolder.desciption_img_view.setImageBitmap(item.getImage());
-//            tintucViewHolder.background_image.setImageBitmap(item.getImage());
                 }
             } else {
                 if (position == POSITION)
                     return convertView;
                 else return null;
             }
-//        txt.setText(data[position]);
-
             return convertView;
 
         } else {

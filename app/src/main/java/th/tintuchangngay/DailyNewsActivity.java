@@ -8,6 +8,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.google.android.gms.ads.MobileAds;
@@ -48,6 +49,7 @@ public class DailyNewsActivity extends Activity {
 
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
+        mDrawerLayout.openDrawer(Gravity.START);
         mToggle.syncState();
 
         nav_view = (NavigationView) findViewById(R.id.nav_view);

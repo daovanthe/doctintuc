@@ -2,6 +2,7 @@ package th.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
@@ -43,14 +44,28 @@ public class FeedView extends ListView {
         contentAdapter = new ContentAdapter(mContext);
         contentAdapter.select(feed_src, feed_category);
         contentAdapter.onLoadingContent(new MDLoading());
+        contentAdapter.onLoadedContent(new MDLoaded());
+
         contentAdapter.execute(mListOfNews);
     }
 
     class MDLoading implements ContentAdapter.DLoading {
         @Override
         public void onDownload() {
-            ((BaseAdapter) getAdapter()).notifyDataSetChanged();
+
         }
     }
 
+    class MDLoaded implements ContentAdapter.DLoaded {
+
+        @Override
+        public void onDownloaded() {
+
+            getFirstVisiblePosition();
+            invalidateViews();
+
+            ((BaseAdapter) getAdapter()).notifyDataSetChanged();
+            Log.d("the.dv", "DOWNLOADED 00");
+        }
+    }
 }
