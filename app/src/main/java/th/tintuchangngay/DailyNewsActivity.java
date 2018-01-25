@@ -61,6 +61,10 @@ public class DailyNewsActivity extends Activity {
 
 
 
+    public void foo() {
+        Log.d("tintuc","hello");
+    }
+
     public void MenuEventHandler() {
         int item_length = nav_view.getMenu().size();
         mContext = this;
